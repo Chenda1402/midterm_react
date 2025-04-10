@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-const EditPost = ({ selectedPost, onUpdate }) => {
+const EditPost = ({ selectedPost, onUpdate, setEdit }) => {
   const [title, setTitle] = useState(selectedPost?.title || '');
   const [description, setDescription] = useState(
     selectedPost?.description || ''
@@ -24,6 +24,7 @@ const EditPost = ({ selectedPost, onUpdate }) => {
       )
       .then((response) => {
         onUpdate(response.data);
+        setEdit(true);
       })
       .catch((error) => console.error('Error updating post:', error));
   };

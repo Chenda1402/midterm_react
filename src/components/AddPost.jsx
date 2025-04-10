@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-const AddPost = ({ onAdd }) => {
+const AddPost = ({ onAdd, setAddNew }) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [url, setUrl] = useState('');
@@ -17,6 +17,7 @@ const AddPost = ({ onAdd }) => {
         setTitle('');
         setDescription('');
         setUrl('');
+        setAddNew(true);
       })
       .catch((error) => console.error('Error adding post:', error));
   };
