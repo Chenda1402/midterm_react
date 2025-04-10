@@ -7,7 +7,7 @@ const PostList = ({ onEdit }) => {
       .get('https://midterm-json-server-nine.vercel.app/Video')
       .then((response) => setPosts(response.data)) // Fetch first 5 posts
       .catch((error) => console.error('Error fetching posts:', error));
-  }, [posts]);
+  }, []);
   const handleDelete = (id) => {
     axios
       .delete(`https://midterm-json-server-nine.vercel.app/Video/${id}`)
